@@ -1,0 +1,331 @@
+<!--<section class="main">
+    <h1>About</h1>
+    <div class="content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel placerat ipsum. Fusce eu leo in elit vulputate consequat at vitae dui. Sed at nunc eu risus auctor tempus quis eu nisi. Duis volutpat id erat sit amet suscipit. Praesent lobortis eros
+        ac hendrerit feugiat. Vestibulum ut odio non eros commodo eleifend nec nec augue. Sed cursus quam eu placerat egestas. Etiam id metus ac turpis sagittis tempor. Quisque condimentum felis et nunc sodales, vel posuere turpis elementum. Quisque sagittis
+        nibh sit amet malesuada pellentesque.<br> Praesent sodales est mauris, in tincidunt augue pharetra in. Nam libero nunc, ultricies sit amet felis vel, lacinia tempus dolor. In pellentesque nisi odio, id suscipit mi convallis ut. Proin bibendum
+        libero leo, ut pretium urna vulputate et. Phasellus in est vel turpis cursus finibus sit amet non sem. In fermentum vitae dui vel finibus. Nullam commodo, ligula scelerisque consectetur maximus, leo dui tincidunt risus, nec ornare nisi ante non
+        mauris. Cras quis ultricies turpis, sit amet feugiat neque. Proin eu tellus risus. Nam molestie porttitor accumsan. Quisque pulvinar aliquet sapien sollicitudin scelerisque.
+    </div>
+</section> -->
+<style>
+    /* basic stylings ------------------------------------------ */
+    
+    h2 {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    
+    h2 small {
+        font-weight: normal;
+        color: #888;
+        display: block;
+    }
+    /* form starting stylings ------------------------------- */
+    
+    .group {
+        position: relative;
+        margin-bottom: 45px;
+    }
+    
+    input {
+        font-size: 18px;
+        padding: 10px 10px 10px 5px;
+        display: block;
+        width: 300px;
+        border: none;
+        border-bottom: 1px solid #757575;
+    }
+    
+    input:focus {
+        outline: none;
+    }
+    /* grouperLABEL ======================================= */
+    
+    label {
+        color: #999;
+        font-size: 18px;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        left: 5px;
+        top: 10px;
+        transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -webkit-transition: 0.2s ease all;
+    }
+    /* active state */
+    
+    input:focus~label,
+    input:valid~label,
+    textarea:focus~label,
+    textarea:valid~label {
+        top: -13px;
+        font-size: 12px;
+        font-weight: bold;
+        color: hsl(2, 75%, 26%);
+    }
+    /* BOTTOM BARS ================================= */
+    
+    .bar {
+        position: relative;
+        display: block;
+        width: 320px;
+    }
+    
+    .bar:before,
+    .bar:after {
+        content: '';
+        height: 2px;
+        width: 0;
+        bottom: 0.5px;
+        position: absolute;
+        background: hsl(2, 75%, 26%);
+        transition: 0.6s ease all;
+        -moz-transition: 0.6s ease all;
+        -webkit-transition: 0.6s ease all;
+    }
+    
+    .bar:before {
+        left: 50%;
+    }
+    
+    .bar:after {
+        right: 50%;
+    }
+    /* active state */
+    
+    input:focus~.bar:before,
+    input:focus~.bar:after {
+        width: 50%;
+    }
+    /* HIGHLIGHTER ================================== */
+    
+    .highlight {
+        position: absolute;
+        height: 60%;
+        width: 100px;
+        top: 25%;
+        left: 0;
+        pointer-events: none;
+        opacity: 0.4;
+    }
+    /* active state */
+    
+    input:focus~.highlight,
+    {
+        -webkit-animation: inputHighlighter 0.6s ease;
+        -moz-animation: inputHighlighter 0.6s ease;
+        animation: inputHighlighter 0.6s ease;
+    }
+    /* ANIMATIONS ================ */
+    
+    @-webkit-keyframes inputHighlighter {
+        from {
+            background: hsl(2, 75%, 26%);
+        }
+        to {
+            width: 0;
+            background: transparent;
+        }
+    }
+    
+    @-moz-keyframes inputHighlighter {
+        from {
+            background: hsl(2, 75%, 26%);
+        }
+        to {
+            width: 0;
+            background: transparent;
+        }
+    }
+    
+    @keyframes inputHighlighter {
+        from {
+            background: hsl(2, 75%, 26%);
+        }
+        to {
+            width: 0;
+            background: transparent;
+        }
+    }
+    
+    .t2 {
+        /*border: 1px solid black; */
+        border-spacing: 0.5rem;
+        table-layout: fixed;
+        position: relative;
+        width: 100%;
+        padding: 10px 10px 10px 5px;
+        margin: auto;
+    }
+    
+    .t2 td {
+        border: solid thin;
+        padding: 0.5rem 2rem;
+        white-space: nowrap;
+        border-style: none none;
+        vertical-align: top;
+    }
+    
+    .t2 th {
+        text-decoration: underline;
+        font-weight: normal;
+        padding: 0.2em;
+    }
+    
+    h3 {
+        font-size: 15px;
+        color: #67696d;
+    }
+    /*   
+    textarea {
+        font-size: 18px;
+        display: block;
+        border: 0;
+        width: 90%;
+        border-bottom: 1px solid #757575;
+        margin-top: -36px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px 5px;
+        align-content: center;
+        background: white no-repeat;
+        background-image: linear-gradient(to bottom, hsl(2, 75%, 26%), hsl(2, 75%, 26%)), linear-gradient(to bottom, silver, silver);
+        background-size: 0 2px, 100% 1px;
+        background-position: 50% 100%, 50% 100%;
+        transition: background-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+    }
+    
+    h4 {
+        margin-top: -50px;
+        margin-left: 49px;
+        font-size: 12px;
+        font-weight: bold;
+        color: hsl(2, 75%, 26%);
+    }
+    
+    textarea:focus {
+        background-size: 100% 2px, 100% 1px;
+        outline: none;
+    } */
+</style>
+<section class="main">
+    <div class="container">
+        <form>
+            <table class="t2">
+                <tr>
+                    <th width="50%">
+                    </th>
+                    <th width="50%">
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="group">
+                            <input type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Name*</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="group">
+                            <input type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Email*</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="group">
+                            <input type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Father's Name*</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="group">
+                            <input type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Category*</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="group">
+                            <input type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Registration Number*</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="group">
+                            <input type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Year*</label>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="group">
+                            <input type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Contact Number*</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="group">
+                            <input type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Guardian's Contact Number*</label>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="group">
+                            <input type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Percentage*</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="group">
+                            <input type="text" required>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>Belonging State*</label>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <!-- <h4>Address*</h4>
+            <textarea type="text" required></textarea> -->
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="textarea1" class="materialize-textarea"></textarea>
+                            <label for="textarea1">Textarea</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </form>
+
+    </div>
+</section>
