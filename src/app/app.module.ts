@@ -9,11 +9,12 @@ import { ContentComponent } from './contentArea/app.contentAreaComponent';
 import { FooterComponent } from './footer/app.footerComponent';
 import { AboutComponent } from './about/app.aboutComponent';
 import { ContactComponent } from './contact/app.contact';
+import { UserFormComponent } from './userform/app.userform';
 
 @NgModule({
   declarations: [
     AppComponent, HeaderComponent, NavComponent, ContentComponent, FooterComponent, AboutComponent,
-    ContactComponent
+    ContactComponent, UserFormComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +30,10 @@ import { ContactComponent } from './contact/app.contact';
       {
         path: 'contact',
         component: ContactComponent
+      },
+      {
+        path: 'userform',
+        component: UserFormComponent
       }
     ])
   ],
