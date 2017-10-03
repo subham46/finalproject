@@ -9,11 +9,12 @@ import { FooterComponent } from './footer/app.footerComponent';
 import { AboutComponent } from './about/app.aboutComponent';
 import { ContactComponent } from './contact/app.contact';
 import { UserFormComponent } from './userform/app.userform';
+import { FeedbackComponent } from './feedback/app.feedbackcomponent';
 
 @NgModule({
   declarations: [
     AppComponent, HeaderComponent, NavComponent, ContentComponent, FooterComponent, AboutComponent,
-    ContactComponent, UserFormComponent
+    ContactComponent, UserFormComponent, FeedbackComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +26,10 @@ import { UserFormComponent } from './userform/app.userform';
       {
         path: 'about',
         component: AboutComponent
+      },
+      {
+        path: 'feedback',
+        component: FeedbackComponent
       },
       {
         path: 'contact',
